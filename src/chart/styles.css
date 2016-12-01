@@ -1,0 +1,15 @@
+.chart text {
+  font-family: sans-serif;
+  font-size: 11px;
+  text-anchor: middle;
+}
+
+.chart path,
+.chart line {
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
+}
+
+.series {}

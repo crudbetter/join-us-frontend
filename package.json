@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "browserify": "13.1.1",
+    "css-modulesify": "0.25.1",
+    "d3-axis": "1.0.4",
+    "d3-scale": "1.0.4",
+    "d3-selection": "1.0.3",
+    "d3-shape": "1.0.4",
+    "d3-time": "1.0.4",
+    "d3-time-format": "2.0.3",
+    "electron": "1.4.10",
+    "react": "15.4.1",
+    "react-dom": "15.4.1",
+    "react-redux": "4.4.6",
+    "redux": "3.6.0"
+  },
+  "devDependencies": {
+    "enzyme": "2.6.0",
+    "proxyquireify": "3.2.1",
+    "react-addons-test-utils": "15.4.1",
+    "tap-finished": "0.0.1",
+    "tape": "4.6.3"
+  },
+  "scripts": {
+    "prestart": "browserify src/app.js -o app/bundle.js -p [ css-modulesify -o app/bundle.css ]",
+    "start": "electron ./app",
+    "pretest": "browserify test/*_test.js -o test/bundle.js -p [ css-modulesify -o test/bundle.css ] -p [ proxyquireify/plugin ] -x react/addons -x react/lib/ReactContext -x react/lib/ExecutionEnvironment",
+    "test": "electron ./test"
+  }
+}
